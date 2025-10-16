@@ -7,6 +7,10 @@ app.use(express.json());
 
 const TARGET_URL = "https://four0-mak-server-3.onrender.com/health";
 
+app.get("/", (req, res) => {
+  res.send("Auto-server server ishlayapti");
+})
+
 // Bu endpoint orqali ma'lumotni qaytaradi
 app.get("/ping-data", async (req, res) => {
   try {
@@ -35,7 +39,7 @@ await fetch("https://four0-mak-server-3.onrender.com/notify", {
 setInterval(async () => {
   try {
     const res = await fetch(TARGET_URL);
-    console.log(`[PING] ${new Date().toLocaleTimeString()} - Status: ${res.status}, Messenge ${res.message}`);
+    console.log(`[PING] ${new Date().toLocaleTimeString()} - Status: ${res.status}`);
   } catch (err) {
     console.error("Ping xatolik:", err.message);
   }
