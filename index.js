@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const TARGET_URL = "http://localhost:5000/health";
+const TARGET_URL = "https://four0-mak-server-3.onrender.com/health";
 
 // Bu endpoint orqali ma'lumotni qaytaradi
 app.get("/ping-data", async (req, res) => {
@@ -21,7 +21,7 @@ app.get("/ping-data", async (req, res) => {
   }
 });
 
-await fetch("http://localhost:3000/notify", { 
+await fetch("https://four0-mak-server-3.onrender.com/notify", { 
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
