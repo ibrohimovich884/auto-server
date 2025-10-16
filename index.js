@@ -43,7 +43,7 @@ setInterval(async () => {
   } catch (err) {
     console.error("Ping xatolik:", err.message);
   }
-}, 1000); // 10 minut 600000
+}, 600000); // 10 minut 600000
 
 app.listen(3000, () => {
   console.log("Ping server 3000-portda ishlayapti");
